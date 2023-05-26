@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -25,9 +28,7 @@ function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple to-red">
       <div className="bg-white rounded-lg shadow-md p-8 w-full md:max-w-md">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-          Login
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-gray">Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="username" className="text-xl font-bold text-gray">
@@ -55,13 +56,13 @@ function LoginPage() {
           </div>
 
           <div className="flex justify-end mb-2">
-          <Link to="/forgotpassword">
-            <button
-              type="button"
-              className="text-lg text-gray font-bold hover:underline focus:outline-none"
-            >
-              Forgot Password?
-            </button>
+            <Link to="/forgotpassword">
+              <button
+                type="button"
+                className="text-lg text-blue1 font-bold hover:underline focus:outline-none"
+              >
+                Forgot Password?
+              </button>
             </Link>
           </div>
 
@@ -77,18 +78,36 @@ function LoginPage() {
               or Sign Up Using
             </span>
             <div className="flex justify-center">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className="text-4xl text-violetlogo hover:text-blue cursor-pointer mx-2"
-              />
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="text-4xl text-blue hover:text-blue cursor-pointer mx-2"
-              />
-              <FontAwesomeIcon
-                icon={faGoogle}
-                className="text-4xl text-red hover:text-blue cursor-pointer mx-2"
-              />
+              <a
+                href="https://www.facebook.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="text-4xl text-violetlogo hover:text-blue cursor-pointer mx-2"
+                />
+              </a>
+              <a
+                href="https://www.twitter.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className="text-4xl text-blue hover:text-blue cursor-pointer mx-2"
+                />
+              </a>
+              <a
+                href="https://accounts.google.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faGoogle}
+                  className="text-4xl text-red hover:text-blue cursor-pointer mx-2"
+                />
+              </a>
             </div>
           </div>
         </form>
